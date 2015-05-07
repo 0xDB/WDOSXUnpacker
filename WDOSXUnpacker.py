@@ -3,22 +3,22 @@
 # Author: Daniel Burian
 #
 # Description:
-# This module can unpack files packed with WDOSX.
+#   This module can unpack files packed with WDOSX.
 #
 # example usage:
-# python WDOSXUnpacker.py TARGET.EXE OUTFOLDER
+#   python WDOSX_unpack.py TARGET.EXE OUTFOLDER
 #
 # License: unlicense (see unlicense.org)
 #
 # Known possible bug:
-# It seems that sometimes invalid virtual filesizes are used.
-# For example in one analyzed exe file, pmirq.wdl has
-# virtual size 0xc400, but the unpacking algorithm isn't
-# finished when reaching this point, resulting in an
-# index out of bounds exception. Since I don't know the real
-# filesize and it might be correct behavior, for now unpacking
-# just stops at 0xc400, the file is written to disk and
-# a warning message is printed.
+#   It seems that sometimes invalid virtual filesizes are used.
+#   For example in one analyzed exe file pmirq.wdl has
+#   virtual size 0xc400, but the unpacking algorithm isn't
+#   finished when reaching this point, resulting in an
+#   index out of bounds exception. Since I don't know the real
+#   filesize and it might be correct behavior, for now unpacking
+#   just stops at when an exception occurs, the file is written
+#   to disk and a warning message is printed.
 
 import sys
 import json
